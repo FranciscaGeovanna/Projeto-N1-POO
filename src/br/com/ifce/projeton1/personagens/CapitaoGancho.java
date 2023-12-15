@@ -16,4 +16,17 @@ public class CapitaoGancho extends Personagem{
 	public void setArma(Arma arma) {
 		this.arma = arma;
 	}
+	
+	public void atacar(Personagem oponente) {
+	    double danoCausado = arma.danoCausado();
+	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
+	    oponente.sofrerAtaque(danoCausado);
+	}
+
+	
+	public void atacarComPoderEspecial(Personagem oponente) {
+		double danoCausado = arma.danoCausadoPoder();
+	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
+	    oponente.sofrerAtaque(danoCausado);
+	}
 }

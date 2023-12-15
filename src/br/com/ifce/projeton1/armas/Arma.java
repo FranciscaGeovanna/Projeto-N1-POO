@@ -5,6 +5,7 @@ public class Arma {
 	private int forca;
 	private int precisao;
 	private String poder;
+	private int forcaPoder;
 	
 	public Arma(String nome, int forca, int precisao, String poder) {
 		this.nome = nome;
@@ -39,5 +40,22 @@ public class Arma {
 	}
 	public void setPoder(String poder) {
 		this.poder = poder;
+	}
+	
+	public int getForcaPoder() {
+		return forcaPoder;
+	}
+	public void setForcaPoder(int forcaPoder) {
+		this.forcaPoder = forcaPoder;
+	}
+	
+	public double danoCausado() {
+		double dano = (this.forca*0.6) + (this.precisao*0.4);
+		return dano;
+	}
+	
+	public double danoCausadoPoder() {
+		double dano = (this.forca*0.6) + (this.precisao*0.4) + (this.forcaPoder * 0.6);
+		return dano;
 	}
 }

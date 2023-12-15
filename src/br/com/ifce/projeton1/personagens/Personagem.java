@@ -23,9 +23,9 @@ public class Personagem {
 		this.vida = vida;
 	}
 	
-	// atacar 
-	public void sofrerAtaque(int dano) {
-		vida -= dano;
+	public void sofrerAtaque(double dano) {
+	    vida -= dano;
+	    System.out.println("Vida de " + getNome() + " após o ataque: " + vida);
 	}
 	
 	public boolean vivo() {

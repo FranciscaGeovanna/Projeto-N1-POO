@@ -17,5 +17,16 @@ public class Malevola extends Personagem{
 		this.arma = arma;
 	}
 	
-	// usar poder
+	public void atacar(Personagem oponente) {
+	    double danoCausado = arma.danoCausado();
+	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
+	    oponente.sofrerAtaque(danoCausado);
+	}
+
+	
+	public void lancarFeitico(Personagem oponente) {
+		double danoCausado = arma.danoCausadoPoder();
+	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
+	    oponente.sofrerAtaque(danoCausado);
+	}
 }
