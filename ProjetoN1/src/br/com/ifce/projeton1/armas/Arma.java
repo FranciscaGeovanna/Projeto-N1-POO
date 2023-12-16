@@ -7,11 +7,15 @@ public class Arma {
 	private String poder;
 	private int forcaPoder;
 	
-	public Arma(String nome, int forca, int precisao, String poder) {
+	public Arma(String nome, int forca, int precisao) {
 		this.nome = nome;
 		this.forca = forca;
-		this.poder = poder;
 		this.precisao = precisao;
+	}
+	
+	public Arma(String poder, int forcaPoder) {
+		this.poder = poder;
+		this.forcaPoder = forcaPoder;
 	}
 
 	public String getNome() {
@@ -50,9 +54,15 @@ public class Arma {
 	}
 	
 	public double danoCausado() {
+		double variacao = Math.random() * 60 + 10; 
+	    double dano = ((this.forca * 0.6) + (this.precisao * 0.4)) * variacao;
+	    return dano;
+	}
+	
+	/*public double danoCausado() {
 		double dano = (this.forca*0.6) + (this.precisao*0.4);
 		return dano;
-	}
+	}*/
 	
 	public double danoCausadoPoder() {
 		double dano = (this.forca*0.6) + (this.precisao*0.4) + (this.forcaPoder * 0.6);

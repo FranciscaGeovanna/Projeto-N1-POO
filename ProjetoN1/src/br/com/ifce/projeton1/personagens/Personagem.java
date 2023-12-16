@@ -35,4 +35,12 @@ public class Personagem {
         	return false;
         }
     }
+	
+	public void atacarComPoder(Personagem oponente) {
+		System.out.println("Atacando");
+	}
+	
+	public void atacar(Personagem oponente) {
+		System.out.println("Atacando");
+	}
 }

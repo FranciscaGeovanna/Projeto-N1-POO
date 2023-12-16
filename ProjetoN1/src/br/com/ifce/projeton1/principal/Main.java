@@ -2,12 +2,15 @@ package br.com.ifce.projeton1.principal;
 
 import java.util.Scanner;
 
+import br.com.ifce.projeton1.armas.Arma;
 import br.com.ifce.projeton1.personagens.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
+		Personagem jogador1 = null;
+		Personagem jogador2 = null;
 		
 		System.out.println("================ Seja bem-vindo(a) ao jogo! ================");
 		System.out.println("Esses são os personagens disponíveis: ");
@@ -19,7 +22,7 @@ public class Main {
 		System.out.println("6 - Gastón");
 		
 		for(int i = 1; i <= 2; i++) {
-			System.out.println("Jogador " + i + " escolha seu personagem...");
+			System.out.println("\nJogador " + i + " escolha seu personagem...");
 			int j = ler.nextInt();
 			if(j == 0 || j > 6) {
 				System.out.println("Opção inválida!");
@@ -27,16 +30,30 @@ public class Main {
 			}
 			
 			if(j == 1) {
-				Malevola m = new Malevola("Malévola", 100, null);
+				Arma a = new Arma("Bastão", 35, 3);
+				Arma poder = new Arma("Mágia Negra", 45);
+				Malevola m = new Malevola("Malévola", 100, a, poder);
 				System.out.println("Parabéns, você escolheu a Malévola, uma fada super poderosa e malvada!");
 				System.out.println("Sua arma é um centro de ouro afiado, que também pode ser usado com magia negra");
 				System.out.println("Boa sorte!");
+				if(i == 1) {
+					jogador1 = m;
+				} else {
+					jogador2 = m;
+				}
 			}
 			else if(j == 2) {
-				CapitaoGancho cg = new CapitaoGancho("Capitão Gancho", 125, null);
+				Arma a = new Arma("Espada", 15, 3);
+				Arma poder = new Arma("Chuva de Adagas", 28);
+				CapitaoGancho capitao = new CapitaoGancho("Capitão Gancho", 150, a, poder);
 				System.out.println("Parabéns, você escolheu o Capitão Gancho, o pirata mais temido da Terra do Nunca!");
 				System.out.println("Sua arma é uma espada, mas ele também pode atirar várias adagas de uma vez!");
 				System.out.println("Boa sorte!");
+				if(i == 1) {
+					jogador1 = capitao;
+				} else {
+					jogador2 = capitao;
+				}
 			}
 			else if(j == 3) {
 				RainhaDeCopas rc = new RainhaDeCopas("Rainha de Copas", 100, null);
@@ -64,10 +81,12 @@ public class Main {
 			}
 		}
 		
-		boolean jogar = true;
+		Batalha b = new Batalha();
+		b.batalhar(jogador1, jogador2);
+		/*boolean jogar = true;
 		while(jogar == true) {
 			for(int i = 1; i <= 2; i++) {
-				System.out.println("Jogador " + i + " escolha sua forma de ataque...");
+				System.out.println("\nJogador " + i + " escolha sua forma de ataque...");
 				System.out.println("1 - Atacar com a sua arma");
 				System.out.println("2 - Atacar com poder especial");
 				System.out.println("3 - Desistir");
@@ -75,9 +94,13 @@ public class Main {
 				
 				if(a == 1) {
 					System.out.println("Vamos atacar!!");
+					if(i == 1) {
+						jogador1.atacar(jogador2);
+						System.out.println(jogador1.getVida());
+					}
 				}
 			}
-		}
+		}*/
 	}
 
 }
