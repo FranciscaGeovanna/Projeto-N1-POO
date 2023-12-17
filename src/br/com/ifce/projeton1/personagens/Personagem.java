@@ -25,6 +25,9 @@ public class Personagem {
 	
 	public void sofrerAtaque(double dano) {
 	    vida -= dano;
+	    if (vida < 0) {
+	        vida = 0;
+	    }
 	    System.out.println("Vida de " + getNome() + " após o ataque: " + vida);
 	}
 	
@@ -35,4 +38,12 @@ public class Personagem {
         	return false;
         }
     }
+	
+	public void atacarComPoder(Personagem oponente) {
+		System.out.println();
+	}
+	
+	public void atacar(Personagem oponente) {
+		System.out.println("Atacando...");
+	}
 }
