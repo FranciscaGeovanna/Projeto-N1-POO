@@ -56,33 +56,63 @@ public class Main {
 				}
 			}
 			else if(j == 3) {
-				RainhaDeCopas rc = new RainhaDeCopas("Rainha de Copas", 100, null);
+				Arma a = new Arma("Varinhad", 18, 7);
+				Arma poder = new Arma("Cartas de baralho cortantes", 40);
+				RainhaDeCopas rainha = new RainhaDeCopas("Rainha de copas", 100, a, poder);
 				System.out.println("Parabéns, você escolheu a Rainha de Copas, uma fada super poderosa e malvada!");
 				System.out.println("Sua arma é uma varinha mágica, mas ela também pode liberar cartas de baralho cortante");
 				System.out.println("Boa sorte!");
+				if(i == 1) {
+					jogador1 = rainha;
+				} else {
+					jogador2 = rainha;
+				}
 			}
 			else if(j == 4) {
-				Hades h = new Hades("Hades", 100, null);
+				Arma a = new Arma("Cajado das sombras", 20, 8);
+				Arma poder = new Arma("Relâmpago", 52);
+				Hades h = new Hades("Hades", 100, a, poder);
 				System.out.println("Parabéns, você escolheu o Hades, um deus grego do submundo!");
 				System.out.println("Sua arma é um cajado das sombras, porém o Hades também pode empunhar um relâmpago");
 				System.out.println("Boa sorte!");
+				if(i == 1) {
+					jogador1 = h;
+				} else {
+					jogador2 = h;
+				}
 			}
 			else if(j == 5) {
-				Ursula u = new Ursula("Úrsula", 100, null);
+				Arma a = new Arma("Tentáculos", 15, 9);
+				Arma poder = new Arma("Cortina de tinta negra", 50);
+				Ursula u = new Ursula("Úrsula", 100, a, poder);
 				System.out.println("Parabéns você escolheu a Úrsula, a mais temida dos mares!");
 				System.out.println("Sua arma são seus tentáculos super fortes, ela também pode atacar com uma cortina de tinta preta");
 				System.out.println("Boa sorte!");
+				if(i == 1) {
+					jogador1 = u;
+				} else {
+					jogador2 = u;
+				}
 			}
 			else if(j == 6){
-				Gaston g = new Gaston("Gastón", 100, null);
+				Arma a = new Arma("Arco e flecha", 38, 4);
+				Arma poder = new Arma("Flechas Flamejantes", 48);
+				Gaston g = new Gaston("Gastón", 100, a, poder);
 				System.out.println("Parabéns você escolheu o Gastón, um caçador habilidoso!");
 				System.out.println("Sua arma é um arco e flecha, que também pode atirar flechas flamejantes");
 				System.out.println("Boa sorte!");
+				if(i == 1) {
+					jogador1 = g;
+				} else {
+					jogador2 = g;
+				}
 			}
 		}
 		
 		Batalha b = new Batalha();
 		b.batalhar(jogador1, jogador2);
+		
+		ler.close();
 		/*boolean jogar = true;
 		while(jogar == true) {
 			for(int i = 1; i <= 2; i++) {

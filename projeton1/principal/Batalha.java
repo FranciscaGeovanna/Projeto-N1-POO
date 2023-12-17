@@ -13,6 +13,14 @@ public class Batalha {
                 boolean escolhaValida = false;
 
                 while (!escolhaValida) {
+                	if (play1.getVida() == 0) {
+                        System.out.println("\nO jogador 1 com o personagem " + play1.getNome() + " venceu!");
+                        break;
+                    } else if (play2.getVida() == 0) {
+                        System.out.println("\nO jogador 2 com o personagem " + play2.getNome() + " venceu!");
+                        break;
+                    }
+                	
                     System.out.println("\nJogador " + i + ", escolha sua forma de ataque...");
                     System.out.println("1 - Atacar com sua arma");
                     System.out.println("2 - Atacar com poder especial");
@@ -25,50 +33,38 @@ public class Batalha {
                     } else {
                         System.out.println("Por favor, digite uma opção válida!");
                     }
-                
-
+                    
 	                if (a == 1) {
 	                    if (i == 1) {
 	                        System.out.println("Atacando o oponente...");
 	                        play1.atacar(play2);
 	                        System.out.println("Vida de " + play1.getNome() + ": " + play1.getVida());
-	                        if(play2.getVida() == 0) {
-	                            System.out.println("O jogador 1 com o personagem " + play1.getNome() + "venceu!");
-	                            break;
-	                        }
+	                        
 	                    } else {
 	                        System.out.println("Atacando oponente...");
 	                        play2.atacar(play1);
 	                        System.out.println("Vida de " + play2.getNome() + ": " + play2.getVida());
-	                        if(play1.getVida() == 0) {
-	                            System.out.println("O jogador 2 com o personagem " + play2.getNome() + "venceu!");
-	                            break;
-	                        }
+	                        
 	                    }
 	                } else if (a == 2) {
 	                    if (i == 1) {
 	                        System.out.println("Vamos atacar com poder especial!!");
 	                        play1.atacarComPoder(play2);
 	                        System.out.println("Vida de " + play1.getNome() + ": " + play1.getVida());
-	                        if(play2.getVida() == 0) {
-	                            System.out.println("O jogador 1 com o personagem " + play1.getNome() + "venceu!");
-	                            break;
-	                        }
+	                        
 	                    } else {
 	                        System.out.println("Vamos atacar com poder especial!!");
 	                        play2.atacarComPoder(play1);
 	                        System.out.println("Vida de " + play2.getNome() + ": " + play2.getVida());
-	                        if(play1.getVida() == 0) {
-	                            System.out.println("O jogador 2 com o personagem " + play2.getNome() + "venceu!");
-	                        }
+	                        
 	                    }
 	                } else if (a == 3) {
 	                    if (i == 1) {
 	                        System.out.println("Jogador " + i + " desistiu. ");
-	                        System.out.println("Jogador 2 com o personagem " + play2.getNome() + "venceu!");
+	                        System.out.println("\nJogador 2 com o personagem " + play2.getNome() + " venceu!");
 	                    } else {
 	                        System.out.println("Jogador " + i + " desistiu. ");
-	                        System.out.println("Jogador 1 com o personagem " + play1.getNome() + " venceu!");
+	                        System.out.println("\nJogador 1 com o personagem " + play1.getNome() + " venceu!");
 	                    }
 	                    return;
 	                }

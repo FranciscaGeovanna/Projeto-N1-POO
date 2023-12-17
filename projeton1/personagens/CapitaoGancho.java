@@ -36,7 +36,7 @@ public class CapitaoGancho extends Personagem{
 	@Override
 	public void atacarComPoder(Personagem oponente) {
         double danoCausado = arma.danoCausadoPoder();
-        System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + poder.getNome() + " causando " + danoCausado + " de dano!");
+        System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + poder.getPoder() + " causando " + danoCausado + " de dano!");
         oponente.sofrerAtaque(danoCausado);
 	}
 	
