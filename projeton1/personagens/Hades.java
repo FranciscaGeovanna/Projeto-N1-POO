@@ -29,7 +29,7 @@ public class Hades extends Personagem{
 	@Override
 	public void atacar(Personagem oponente) {
 	    double danoCausado = arma.danoCausado();
-	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
+	    System.out.printf("%s ataca %s com %s causando %.2f de dano!\n", getNome(), oponente.getNome(), arma.getNome(), danoCausado);
 	    oponente.sofrerAtaque(danoCausado);
 	}
 

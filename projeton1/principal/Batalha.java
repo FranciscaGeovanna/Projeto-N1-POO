@@ -13,14 +13,6 @@ public class Batalha {
                 boolean escolhaValida = false;
 
                 while (!escolhaValida) {
-                	if (play1.getVida() == 0) {
-                        System.out.println("\nO jogador 1 com o personagem " + play1.getNome() + " venceu!");
-                        break;
-                    } else if (play2.getVida() == 0) {
-                        System.out.println("\nO jogador 2 com o personagem " + play2.getNome() + " venceu!");
-                        break;
-                    }
-                	
                     System.out.println("\nJogador " + i + ", escolha sua forma de ataque...");
                     System.out.println("1 - Atacar com sua arma");
                     System.out.println("2 - Atacar com poder especial");
@@ -68,7 +60,14 @@ public class Batalha {
 	                    }
 	                    return;
 	                }
-                }  
+                } 
+                if (play1.getVida() == 0) {
+                    System.out.println("\nO jogador 2 com o personagem " + play2.getNome() + " venceu!");
+                    break;
+                } else if (play2.getVida() == 0) {
+                    System.out.println("\nO jogador 1 com o personagem " + play1.getNome() + " venceu!");
+                    break;
+                }
             }
         }
     }

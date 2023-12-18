@@ -24,9 +24,10 @@ public class Main {
 		for(int i = 1; i <= 2; i++) {
 			System.out.println("\nJogador " + i + " escolha seu personagem...");
 			int j = ler.nextInt();
-			if(j == 0 || j > 6) {
+			while(j < 1 || j > 6) {
 				System.out.println("Opção inválida!");
-				break;
+				System.out.println("\nJogador " + i + " escolha seu personagem...");
+				j = ler.nextInt();
 			}
 			
 			if(j == 1) {
@@ -34,7 +35,7 @@ public class Main {
 				Arma poder = new Arma("Mágia Negra", 45);
 				Malevola m = new Malevola("Malévola", 100, a, poder);
 				System.out.println("Parabéns, você escolheu a Malévola, uma fada super poderosa e malvada!");
-				System.out.println("Sua arma é um centro de ouro afiado, que também pode ser usado com magia negra");
+				System.out.println("Sua arma é um centro de ouro afiado, que também pode ser usado com magia negra.");
 				System.out.println("Boa sorte!");
 				if(i == 1) {
 					jogador1 = m;
@@ -45,8 +46,9 @@ public class Main {
 			else if(j == 2) {
 				Arma a = new Arma("Espada", 15, 3);
 				Arma poder = new Arma("Chuva de Adagas", 28);
-				CapitaoGancho capitao = new CapitaoGancho("Capitão Gancho", 150, a, poder);
+				CapitaoGancho capitao = new CapitaoGancho("Capitão Gancho", 125, a, poder);
 				System.out.println("Parabéns, você escolheu o Capitão Gancho, o pirata mais temido da Terra do Nunca!");
+				System.out.println("Ele também tem 25 de vida a mais que seus adversários.");
 				System.out.println("Sua arma é uma espada, mas ele também pode atirar várias adagas de uma vez!");
 				System.out.println("Boa sorte!");
 				if(i == 1) {
@@ -56,11 +58,11 @@ public class Main {
 				}
 			}
 			else if(j == 3) {
-				Arma a = new Arma("Varinhad", 18, 7);
+				Arma a = new Arma("Varinha", 18, 7);
 				Arma poder = new Arma("Cartas de baralho cortantes", 40);
 				RainhaDeCopas rainha = new RainhaDeCopas("Rainha de copas", 100, a, poder);
 				System.out.println("Parabéns, você escolheu a Rainha de Copas, uma fada super poderosa e malvada!");
-				System.out.println("Sua arma é uma varinha mágica, mas ela também pode liberar cartas de baralho cortante");
+				System.out.println("Sua arma é uma varinha mágica, mas ela também pode liberar cartas de baralho cortante.");
 				System.out.println("Boa sorte!");
 				if(i == 1) {
 					jogador1 = rainha;
@@ -73,7 +75,7 @@ public class Main {
 				Arma poder = new Arma("Relâmpago", 52);
 				Hades h = new Hades("Hades", 100, a, poder);
 				System.out.println("Parabéns, você escolheu o Hades, um deus grego do submundo!");
-				System.out.println("Sua arma é um cajado das sombras, porém o Hades também pode empunhar um relâmpago");
+				System.out.println("Sua arma é um cajado das sombras, porém o Hades também pode empunhar um relâmpago.");
 				System.out.println("Boa sorte!");
 				if(i == 1) {
 					jogador1 = h;
@@ -83,10 +85,10 @@ public class Main {
 			}
 			else if(j == 5) {
 				Arma a = new Arma("Tentáculos", 15, 9);
-				Arma poder = new Arma("Cortina de tinta negra", 50);
-				Ursula u = new Ursula("Úrsula", 100, a, poder);
+				Arma poder = new Arma("Cortina de tinta preta", 50);
+				Ursula u = new Ursula("Úrsula", 100, 2, a, poder);
 				System.out.println("Parabéns você escolheu a Úrsula, a mais temida dos mares!");
-				System.out.println("Sua arma são seus tentáculos super fortes, ela também pode atacar com uma cortina de tinta preta");
+				System.out.println("Sua arma são seus tentáculos super fortes, ela também pode atacar com uma cortina de tinta preta.");
 				System.out.println("Boa sorte!");
 				if(i == 1) {
 					jogador1 = u;
@@ -95,11 +97,11 @@ public class Main {
 				}
 			}
 			else if(j == 6){
-				Arma a = new Arma("Arco e flecha", 38, 4);
-				Arma poder = new Arma("Flechas Flamejantes", 48);
+				Arma a = new Arma("Arco e Flecha", 38, 4);
+				Arma poder = new Arma("Flecha flamejante", 48);
 				Gaston g = new Gaston("Gastón", 100, a, poder);
 				System.out.println("Parabéns você escolheu o Gastón, um caçador habilidoso!");
-				System.out.println("Sua arma é um arco e flecha, que também pode atirar flechas flamejantes");
+				System.out.println("Sua arma é um arco e flecha, que também pode atirar flechas flamejantes.");
 				System.out.println("Boa sorte!");
 				if(i == 1) {
 					jogador1 = g;
@@ -113,24 +115,5 @@ public class Main {
 		b.batalhar(jogador1, jogador2);
 		
 		ler.close();
-		/*boolean jogar = true;
-		while(jogar == true) {
-			for(int i = 1; i <= 2; i++) {
-				System.out.println("\nJogador " + i + " escolha sua forma de ataque...");
-				System.out.println("1 - Atacar com a sua arma");
-				System.out.println("2 - Atacar com poder especial");
-				System.out.println("3 - Desistir");
-				int a = ler.nextInt();
-				
-				if(a == 1) {
-					System.out.println("Vamos atacar!!");
-					if(i == 1) {
-						jogador1.atacar(jogador2);
-						System.out.println(jogador1.getVida());
-					}
-				}
-			}
-		}*/
 	}
-
 }

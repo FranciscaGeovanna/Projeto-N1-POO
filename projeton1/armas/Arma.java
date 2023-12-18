@@ -1,7 +1,5 @@
 package br.com.ifce.projeton1.armas;
 
-import java.util.Random;
-
 public class Arma {
 	private String nome;
 	private int forca;
@@ -55,23 +53,17 @@ public class Arma {
 		this.forcaPoder = forcaPoder;
 	}
 	
-	/*public int danoCausado() {
-	    Random random = new Random();
-	    int variacao = random.nextInt(61) + 10; 
-	    int danoBase = (int) ((this.forca * 1) + (this.precisao * 1.5));
-	    int dano = danoBase + variacao;
-	    System.out.println("Dano causado: " + dano);
-	    return dano;
-	}*/
-
-	
 	public double danoCausado() {
 		double dano = (this.forca*0.4) + (this.precisao*0.6);
 		return dano;
 	}
 	
 	public double danoCausadoPoder() {
-		double dano = (this.forca*0.6) + (this.precisao*0.4) + (this.forcaPoder * 0.6);
-		return dano;
+		double intervalo = 60;
+		double dano = (Math.random() * intervalo);
+		if (dano > 60) {
+			dano = 60;
+		}
+		return (int) (dano + 0.5);
 	}
 }

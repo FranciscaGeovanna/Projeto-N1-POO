@@ -5,13 +5,11 @@ import br.com.ifce.projeton1.armas.Arma;
 public class Malevola extends Personagem{
 	private Arma arma;
 	private Arma poder;
-	//private boolean poderUsado;
 
 	public Malevola(String nome, int vida, Arma arma, Arma poder) {
 		super(nome, vida);
 		this.arma = arma;
 		this.poder = poder;
-		//this.poderUsado = false;
 	}
 
 	public Arma getArma() {
@@ -41,15 +39,4 @@ public class Malevola extends Personagem{
         System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + poder.getPoder() + " causando " + danoCausado + " de dano!");
         oponente.sofrerAtaque(danoCausado);
 	}
-	
-	/*public void atacarComPoder(Personagem oponente) {
-	    if (!poderUsado) {
-	        double danoCausado = arma.danoCausadoPoder();
-	        System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
-	        oponente.sofrerAtaque(danoCausado);
-	        poderUsado = true;
-	    } else {
-	        System.out.println("O seu poder especial já foi usado! Escolha outra opção.");
-	    }
-	}*/
 }

@@ -39,27 +39,4 @@ public class CapitaoGancho extends Personagem{
         System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + poder.getPoder() + " causando " + danoCausado + " de dano!");
         oponente.sofrerAtaque(danoCausado);
 	}
-	
-	/*public void atacar(Personagem oponente) {
-	    double danoCausado = arma.danoCausado();
-	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
-	    oponente.sofrerAtaque(danoCausado);
-	}
-
-	public void lancarAdagas(Personagem oponente) {
-	    if (!poderUsado) { 
-	        double danoCausado = arma.danoCausadoPoder();
-	        System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
-	        oponente.sofrerAtaque(danoCausado);
-	        poderUsado = true;
-	    } else {
-	        System.out.println("O seu poder especial já foi usado!");
-	    }
-	}*/
-	
-	/*public void atacarComPoderEspecial(Personagem oponente) {
-		double danoCausado = arma.danoCausadoPoder();
-	    System.out.println(getNome() + " ataca " + oponente.getNome() + " com " + arma.getNome() + " causando " + danoCausado + " de dano!");
-	    oponente.sofrerAtaque(danoCausado);
-	}*/
 }
