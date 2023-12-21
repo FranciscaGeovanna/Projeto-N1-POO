@@ -31,7 +31,7 @@ public class Main {
 			}
 			
 			if(j == 1) {
-				Arma a = new Arma("Bastão", 35, 3);
+				Arma a = new Arma("Bastão", 38, 3);
 				Arma poder = new Arma("Mágia Negra", 45);
 				Malevola m = new Malevola("Malévola", 100, a, poder);
 				System.out.println("Parabéns, você escolheu a Malévola, uma fada super poderosa e malvada!");
@@ -73,7 +73,7 @@ public class Main {
 			else if(j == 4) {
 				Arma a = new Arma("Cajado das sombras", 20, 8);
 				Arma poder = new Arma("Relâmpago", 52);
-				Hades h = new Hades("Hades", 100, a, poder);
+				Hades h = new Hades("Hades", 100, a, poder, 1);
 				System.out.println("Parabéns, você escolheu o Hades, um deus grego do submundo!");
 				System.out.println("Sua arma é um cajado das sombras, porém o Hades também pode empunhar um relâmpago.");
 				System.out.println("Boa sorte!");
@@ -97,7 +97,7 @@ public class Main {
 				}
 			}
 			else if(j == 6){
-				Arma a = new Arma("Arco e Flecha", 38, 4);
+				Arma a = new Arma("Arco e Flecha", 35, 4);
 				Arma poder = new Arma("Flecha flamejante", 48);
 				Gaston g = new Gaston("Gastón", 100, a, poder);
 				System.out.println("Parabéns você escolheu o Gastón, um caçador habilidoso!");

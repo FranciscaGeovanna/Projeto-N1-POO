@@ -59,11 +59,11 @@ public class Arma {
 	}
 	
 	public double danoCausadoPoder() {
-		double intervalo = 60;
-		double dano = (Math.random() * intervalo);
-		if (dano > 60) {
+		double intervalo = 60; // INTERVALO MÁX QUE O DANO PODE CHEGAR
+		double dano = (Math.random() * intervalo); // GERA UM VALOR ALEATÓRIO ENTRE 0 E 1 E MULTPLICA PELO INTERVALO
+		if (dano > 60) { // GARANTIR QUE O DANO NÃO ULTRAPASSE 60
 			dano = 60;
 		}
-		return (int) (dano + 0.5);
+		return (int) (dano + 0.5); // CONVERTE PARA NÚMERO INTEIRO
 	}
 }
